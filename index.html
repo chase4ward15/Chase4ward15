@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chase Alford — Ward 15 City Councillor</title>
+  <meta name="description" content="Chase Alford is running for Ward 15 City Councillor in Hamilton, Ontario. Waterdown raised, Ward 15 committed.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --green-deep:   #1B4332;
+      --green-mid:    #2D6A4F;
+      --green-light:  #40916C;
+      --gold:         #D4AF37;
+      --gold-dark:    #B8960C;
+      --gold-pale:    #F0D060;
+      --white:        #FFFFFF;
+      --off-white:    #F8F6F0;
+      --text-dark:    #1A1A1A;
+      --text-mid:     #444444;
+      --text-light:   #777777;
+      --border:       rgba(27,67,50,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-dark);
+      background: var(--off-white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(27,67,50,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+      padding: 0 48px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-donate {
+      background: var(--gold) !important;
+      color: var(--green-deep) !important;
+      padding: 8px 20px !important;
+      border-radius: 3px !important;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-donate:hover { background: var(--gold-pale) !important; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      background: var(--green-deep);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 48px 80px;
+    }
+
+    .hero-rings {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(212,175,55,0.1);
+    }
+
+    .hero-ring-1 { width: 600px; height: 600px; top: -200px; right: -150px; border-width: 40px; border-color: rgba(212,175,55,0.06); }
+    .hero-ring-2 { width: 400px; height: 400px; top: -80px; right: 80px; border-width: 28px; border-color: rgba(212,175,55,0.08); }
+    .hero-ring-3 { width: 220px; height: 220px; bottom: 60px; right: 320px; border-width: 20px; border-color: rgba(212,175,55,0.05); }
+    .hero-ring-4 { width: 150px; height: 150px; bottom: -40px; left: 40%; border-width: 16px; border-color: rgba(212,175,55,0.04); }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.2s ease forwards;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 80px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.35s ease forwards;
+    }
+
+    .hero-headline .gold { color: var(--gold); }
+    .hero-headline .white { color: var(--white); }
+
+    .hero-ward {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: rgba(212,175,55,0.7);
+      letter-spacing: 0.5px;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.45s ease forwards;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.55s ease forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.65s ease forwards;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--green-deep);
+      border: none;
+      padding: 15px 36px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary:hover { background: var(--gold-pale); transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 15px 36px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      border-radius: 3px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.9s 1s ease forwards;
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ── VIDEO SECTION ── */
+    #video-section {
+      background: #0f1f17;
+      padding: 0;
+      position: relative;
+    }
+
+    .video-container {
+      width: 100%;
+      max-height: 500px;
+      background: #0a1a10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      z-index: 2;
+    }
+
+    .play-btn {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 0 40px rgba(212,175,55,0.3);
+    }
+
+    .play-btn:hover { transform: scale(1.08); background: var(--gold-pale); }
+
+    .play-arrow {
+      width: 0; height: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 22px solid var(--green-deep);
+      margin-left: 5px;
+    }
+
+    .video-label {
+      color: rgba(255,255,255,0.35);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .video-bg-rings {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .vbr { position: absolute; border-radius: 50%; border: 1px solid rgba(212,175,55,0.05); }
+    .vbr1 { width: 400px; height: 400px; top: -150px; right: -100px; border-width: 30px; }
+    .vbr2 { width: 250px; height: 250px; bottom: -80px; left: 20%; border-width: 20px; }
+
+    /* ── SLOGAN BAR ── */
+    .slogan-bar {
+      background: var(--gold);
+      padding: 22px 48px;
+    }
+
+    .slogan-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2vw, 20px);
+      font-weight: 700;
+      color: var(--green-deep);
+      text-align: center;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* ── SECTIONS SHARED ── */
+    section { padding: 96px 48px; }
+
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 900;
+      color: var(--green-deep);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+
+    /* ── PLATFORM ── */
+    #platform {
+      background: var(--white);
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2px;
+      margin-top: 16px;
+    }
+
+    .pillar {
+      background: var(--off-white);
+      padding: 40px 32px;
+      border-top: 4px solid var(--green-deep);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+      transform-origin: left;
+    }
+
+    .pillar:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,67,50,0.1); }
+    .pillar:hover::after { transform: scaleX(1); }
+
+    .pillar-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 900;
+      color: rgba(27,67,50,0.08);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .pillar-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+    }
+
+    .pillar-body {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--green-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about .section-eyebrow { color: rgba(212,175,55,0.7); }
+    #about .section-title { color: var(--white); }
+    #about .section-subtitle { color: rgba(255,255,255,0.6); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 300px;
+      height: 360px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(212,175,55,0.2);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(212,175,55,0.05) 0%, transparent 60%);
+    }
+
+    .about-initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.8;
+    }
+
+    .about-photo-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .about-content .section-subtitle { margin-bottom: 32px; }
+
+    .about-body {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.85;
+      margin-bottom: 40px;
+    }
+
+    .about-body p { margin-bottom: 18px; }
+
+    .about-rings {
+      position: absolute;
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
+
+    .ar { position: absolute; border-radius: 50%; border: 1px solid rgba(212,175,55,0.06); }
+    .ar1 { width: 500px; height: 500px; top: 0; right: 0; border-width: 35px; }
+    .ar2 { width: 300px; height: 300px; top: 100px; right: 100px; border-width: 25px; border-color: rgba(212,175,55,0.04); }
+
+    /* ── STATS ── */
+    .stats-bar {
+      background: var(--gold);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(27,67,50,0.6);
+    }
+
+    /* ── DONATE ── */
+    #donate {
+      background: var(--off-white);
+      text-align: center;
+    }
+
+    #donate .section-eyebrow { text-align: center; }
+    #donate .section-title { text-align: center; }
+    #donate .section-subtitle { text-align: center; margin: 0 auto 48px; }
+    #donate .gold-rule { margin: 0 auto 20px; }
+
+    .donate-amounts {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .amount-btn {
+      background: var(--white);
+      color: var(--green-deep);
+      border: 1.5px solid var(--border);
+      padding: 12px 28px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .amount-btn:hover, .amount-btn.active {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+      color: var(--gold);
+    }
+
+    .donate-btn {
+      background: var(--gold);
+      color: var(--green-deep);
+      border: none;
+      padding: 18px 64px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.3px;
+    }
+
+    .donate-btn:hover { background: var(--gold-pale); transform: translateY(-2px); }
+
+    .donate-note {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── GET INVOLVED ── */
+    #involved {
+      background: var(--white);
+    }
+
+    .involved-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .involved-card {
+      background: var(--off-white);
+      padding: 40px;
+      border-top: 3px solid var(--green-deep);
+    }
+
+    .involved-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 12px;
+    }
+
+    .involved-card-body {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      background: var(--white);
+      color: var(--text-dark);
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--green-mid);
+    }
+
+    .form-submit {
+      background: var(--green-deep);
+      color: var(--gold);
+      border: none;
+      padding: 13px 32px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      width: 100%;
+    }
+
+    .form-submit:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+
+    .contact-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--green-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover { color: var(--green-deep); }
+
+    /* ── EMAIL SIGNUP ── */
+    .email-bar {
+      background: var(--green-deep);
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .email-bar-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .email-bar-text p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .email-form {
+      display: flex;
+      gap: 10px;
+      flex: 1;
+      max-width: 440px;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      transition: border-color 0.2s;
+    }
+
+    .email-input::placeholder { color: rgba(255,255,255,0.3); }
+    .email-input:focus { outline: none; border-color: var(--gold); }
+
+    .email-submit {
+      background: var(--gold);
+      color: var(--green-deep);
+      border: none;
+      padding: 12px 24px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .email-submit:hover { background: var(--gold-pale); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0a1a10;
+      padding: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.6;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: all 0.15s;
+    }
+
+    .social-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      section { padding: 64px 24px; }
+      #home { padding: 100px 24px 60px; }
+      .slogan-bar { padding: 18px 24px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 32px 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { width: 100%; }
+      .involved-grid { grid-template-columns: 1fr; }
+      .email-bar { padding: 32px 24px; flex-direction: column; }
+      .email-form { max-width: 100%; width: 100%; }
+      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+      .hero-scroll { display: none; }
+    }
+
+    /* ── ACTIVE STATE HANDLING ── */
+    .amount-btn.active {
+      background: var(--green-deep);
+      border-color: var(--green-deep);
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home" class="nav-logo">Chase Alford</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#about">My Story</a></li>
+      <li><a href="#involved">Get Involved</a></li>
+      <li><a href="#donate" class="nav-donate">Donate</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-rings">
+      <div class="hero-ring hero-ring-1"></div>
+      <div class="hero-ring hero-ring-2"></div>
+      <div class="hero-ring hero-ring-3"></div>
+      <div class="hero-ring hero-ring-4"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Ward 15 City Councillor — October 26, 2026</p>
+      <h1 class="hero-headline">
+        <span class="gold">Ward 15</span><br>
+        <span class="gold">Deserves</span><br>
+        <span class="white">Better.</span>
+      </h1>
+      <p class="hero-ward">Waterdown · Carlisle · Flamborough</p>
+      <p class="hero-sub">We pay Cadillac property taxes for horse-and-buggy services. It's time Ward 15 had a squeaky wheel at City Hall to advocate for our needs.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn-primary">Meet Chase</a>
+        <a href="#platform" class="btn-secondary">Our Platform</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <div id="video-section">
+    <div class="video-container">
+      <div class="video-bg-rings">
+        <div class="vbr vbr1"></div>
+        <div class="vbr vbr2"></div>
+      </div>
+      <div class="video-placeholder">
+        <div class="play-btn">
+          <div class="play-arrow"></div>
+        </div>
+        <p class="video-label">Campaign Introduction — Coming Soon</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLOGAN -->
+  <div class="slogan-bar">
+    <p class="slogan-text">"Ward 15 needs a squeaky wheel at City Hall to get the grease — I'm that wheel."</p>
+  </div>
+
+  <!-- PLATFORM -->
+  <section id="platform">
+    <div class="section-eyebrow">Platform</div>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Four Pillars for<br>Ward 15</h2>
+    <p class="section-subtitle">Real problems deserve specific solutions — not vague promises. Here's exactly what I'm fighting for.</p>
+
+    <div class="platform-grid">
+      <div class="pillar">
+        <div class="pillar-number">01</div>
+        <span class="pillar-icon">🛣️</span>
+        <h3 class="pillar-title">Infrastructure & Roads</h3>
+        <p class="pillar-body">Waterdown is being overwhelmed by simultaneous construction chaos — the bridge, Parkside, and the long-delayed bypass all at once. Ward 15 doesn't need another politician making promises. It needs a project manager who's managed complex, high-stakes operations at scale and knows how to hold contractors accountable.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-number">02</div>
+        <span class="pillar-icon">💰</span>
+        <h3 class="pillar-title">Fair Taxation</h3>
+        <p class="pillar-body">Ward 15 residents pay some of Hamilton's highest property taxes while receiving some of its worst services. The incoming stormwater charge will hit our agricultural operations with tens of thousands of dollars annually. Either Ward 15 gets a fair share of what we put in, or we stop being asked to put in more.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-number">03</div>
+        <span class="pillar-icon">🛡️</span>
+        <h3 class="pillar-title">Community Safety</h3>
+        <p class="pillar-body">We used to pride ourselves on not locking our doors at night. That has changed. Car thefts, a shooting on Wakefield — Waterdown has no visible police presence and criminals know it. I will seek a position on the police services board and work closely with our incoming police compound on Parkside Drive to restore the safety our community deserves.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-number">04</div>
+        <span class="pillar-icon">🌿</span>
+        <h3 class="pillar-title">Environmental Conservation</h3>
+        <p class="pillar-body">Fertile, productive soil is a luxury — not a standard. Once it's paved, it's gone forever. I will protect Ward 15's agricultural lands, investigate resident health concerns related to Opta Minerals' 2023 expansion, and pursue a position on the Hamilton Conservation Authority board to fight the province's plans to develop our woodlands and trails.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-number">26</div>
+      <div class="stat-label">Years in Waterdown</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6ac</div>
+      <div class="stat-label">Greenhouse Operations Managed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">#1</div>
+      <div class="stat-label">First to File — Ward 15</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">Oct 26</div>
+      <div class="stat-label">Election Day 2026</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-rings">
+      <div class="ar ar1"></div>
+      <div class="ar ar2"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <div class="about-initials">CA</div>
+        <p class="about-photo-label">Photo coming soon</p>
+      </div>
+      <div class="about-content">
+        <div class="section-eyebrow">My Story</div>
+        <div class="gold-rule"></div>
+        <h2 class="section-title">Waterdown Raised.<br>Ward 15 Committed.</h2>
+        <div class="about-body">
+          <p>I moved to Waterdown in 2000 with my single mother and little sister after the sudden passing of my father. Waterdown District High School gave me my foundation. The University of Guelph — where I earned a Bachelor of Science in Biological Sciences with a minor in Ecology — gave me my expertise.</p>
+          <p>I built my career managing large-scale agricultural production across New Brunswick and Chatham Kent, eventually overseeing six acres of complex greenhouse operations where every decision had real consequences. Project management isn't a concept to me — it's what I've done professionally, at scale, with no margin for error.</p>
+          <p>I came back to Ward 15 because this is home. And home deserves someone who shows up fully, fights hard, and knows how to get things done.</p>
+          <p>Enough with being forgotten by Hamilton City Hall.</p>
+        </div>
+        <a href="#involved" class="btn-primary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section id="donate">
+    <div class="section-eyebrow">Support the Campaign</div>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Invest in Ward 15</h2>
+    <p class="section-subtitle">Every dollar goes directly toward getting this message to every door in Ward 15. No PACs, no corporate donors — just neighbours supporting neighbours.</p>
+
+    <div class="donate-amounts">
+      <button class="amount-btn" onclick="setAmount(this, 25)">$25</button>
+      <button class="amount-btn active" onclick="setAmount(this, 50)">$50</button>
+      <button class="amount-btn" onclick="setAmount(this, 100)">$100</button>
+      <button class="amount-btn" onclick="setAmount(this, 250)">$250</button>
+      <button class="amount-btn" onclick="setAmount(this, 500)">$500</button>
+      <button class="amount-btn" onclick="setAmount(this, null)">Other</button>
+    </div>
+
+    <button class="donate-btn" onclick="window.location.href='mailto:chase4ward15@gmail.com?subject=Campaign Donation'">Donate Now</button>
+    <p class="donate-note">
+      E-transfer donations accepted at <strong>chase4ward15@gmail.com</strong><br>
+      Maximum individual contribution: $1,200 · Corporate and union donations prohibited under the Municipal Elections Act<br>
+      Authorized by the official agent of Chase Alford, Ward 15 Candidate
+    </p>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section id="involved">
+    <div class="section-eyebrow">Get Involved</div>
+    <div class="gold-rule"></div>
+    <h2 class="section-title">Join the Campaign</h2>
+    <p class="section-subtitle">Transparency and direct access are promises I make to every Ward 15 resident. Reach me directly — no gatekeepers.</p>
+
+    <div class="involved-grid">
+      <div class="involved-card">
+        <h3 class="involved-card-title">Volunteer</h3>
+        <p class="involved-card-body">Whether you can knock doors, post on social media, or simply tell a neighbour about this campaign — every contribution matters. Ward 15 wins this together.</p>
+        <div class="form-group">
+          <input type="text" class="form-input" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder="Email address">
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-input" placeholder="Phone number (optional)">
+        </div>
+        <button class="form-submit" onclick="window.location.href='mailto:chase4ward15@gmail.com?subject=Volunteer Sign Up'">Sign Up to Volunteer</button>
+      </div>
+
+      <div class="involved-card">
+        <h3 class="involved-card-title">Contact Chase Directly</h3>
+        <p class="involved-card-body">I mean it when I say direct access. Whether you have a question, a concern about our community, or just want to talk — reach out.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-dot"></div>
+            <span>📧 <a href="mailto:chase4ward15@gmail.com">chase4ward15@gmail.com</a></span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-dot"></div>
+            <span>📱 <a href="tel:5489968245">(548) 996-8245</a></span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-dot"></div>
+            <span>Ward 15 — Waterdown · Carlisle · Flamborough, Hamilton ON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL SIGNUP -->
+  <div class="email-bar">
+    <div class="email-bar-text">
+      <h3>Stay in the loop.</h3>
+      <p>Campaign updates, community news, and Ward 15 survey findings — direct to your inbox.</p>
+    </div>
+    <div class="email-form">
+      <input type="email" class="email-input" placeholder="your@email.com">
+      <button class="email-submit" onclick="window.location.href='mailto:chase4ward15@gmail.com?subject=Newsletter Signup'">Subscribe</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-logo">Chase Alford — Ward 15</div>
+      <p class="footer-copy">
+        Authorized by the official agent of Chase Alford, Ward 15, Hamilton ON<br>
+        chase4ward15.ca · chase4ward15@gmail.com · (548) 996-8245
+      </p>
+    </div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61588937321408" class="social-btn" target="_blank" rel="noopener">FB</a>
+      <a href="https://www.instagram.com/chase4ward15/" class="social-btn" target="_blank" rel="noopener">IG</a>
+      <a href="https://x.com/chase4ward15" class="social-btn" target="_blank" rel="noopener">X</a>
+      <a href="https://www.youtube.com/channel/UCtXo9-ZNqf546Aq0xujId_Q" class="social-btn" target="_blank" rel="noopener">YT</a>
+      <a href="#" class="social-btn" target="_blank" rel="noopener">TK</a>
+    </div>
+  </footer>
+
+  <script>
+    // Amount button selection
+    function setAmount(btn, amount) {
+      document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    // Mobile menu toggle
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:68px; left:0; right:0; background:rgba(27,67,50,0.98); padding:24px; gap:20px; z-index:999;';
+      }
+    }
+
+    // Smooth nav hide/show on scroll
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      const current = window.scrollY;
+      if (current > lastScroll && current > 100) {
+        nav.style.transform = 'translateY(-100%)';
+      } else {
+        nav.style.transform = 'translateY(0)';
+      }
+      lastScroll = current;
+    });
+
+    // Intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.pillar, .stat, .involved-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
