@@ -848,6 +848,9 @@
       color: var(--gold);
     }
   </style>
+<script 
+  src="https://www.paypal.com/sdk/js?client-id=BAAApVVuvuiriPyslkLOTMSgzk8BWBYQD-Ceoba2CUDSEPaaSd_0JAW39W35g3Aq0qUgoYDn-AmXzHbGNk&components=hosted-buttons&disable-funding=venmo&currency=CAD">
+</script>
 </head>
 <body>
 
@@ -1003,16 +1006,14 @@
     <h2 class="section-title">Invest in Ward 15</h2>
     <p class="section-subtitle">Every dollar goes directly toward getting this message to every door in Ward 15. No PACs, no corporate donors — just neighbours supporting neighbours.</p>
 
-    <div class="donate-amounts">
-      <button class="amount-btn" onclick="setAmount(this, 25)">$25</button>
-      <button class="amount-btn active" onclick="setAmount(this, 50)">$50</button>
-      <button class="amount-btn" onclick="setAmount(this, 100)">$100</button>
-      <button class="amount-btn" onclick="setAmount(this, 250)">$250</button>
-      <button class="amount-btn" onclick="setAmount(this, 500)">$500</button>
-      <button class="amount-btn" onclick="setAmount(this, null)">Other</button>
-    </div>
-
-    <button class="donate-btn" onclick="window.location.href='mailto:chase4ward15@gmail.com?subject=Campaign Donation'">Donate Now</button>
+<div style="display:flex; justify-content:center; margin:0 auto 16px;">
+    <div id="paypal-container-TAW4ZNZAGMA8A"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "TAW4ZNZAGMA8A",
+  }).render("#paypal-container-TAW4ZNZAGMA8A")
+</script>
+</div>
     <p class="donate-note">
       E-transfer donations accepted at <strong>chase4ward15@gmail.com</strong><br>
       Maximum individual contribution: $1,200 · Corporate and union donations prohibited under the Municipal Elections Act<br>
