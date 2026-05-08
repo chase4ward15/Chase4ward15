@@ -612,11 +612,12 @@
     }
 
     .involved-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: start;
+  max-width: 700px;
+}
 
     .involved-card {
       background: var(--off-white);
@@ -1053,13 +1054,11 @@
       <h3>Stay in the loop.</h3>
       <p>Campaign updates, community news, and Ward 15 survey findings — direct to your inbox.</p>
     </div>
-    <div style="width:100%; overflow:hidden;">
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSf4NCzITqI3KKtqNcOKMHunykQ_v_B36Ja5pH_Zz7tofh6SNQ/formResponse" method="POST" target="_blank" style="display:flex; gap:10px; flex:1; max-width:440px;">
-  <input type="email" name="entry.134591584" class="email-input" placeholder="your@email.com" required>
-  <button type="submit" class="email-submit">Subscribe</button>
-</form>
-</form>
-  </div>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf4NCzITqI3KKtqNcOKMHunykQ_v_B36Ja5pH_Zz7tofh6SNQ/formResponse" method="POST" target="_blank" style="display:flex; gap:10px; flex:1; max-width:440px;">
+      <input type="email" name="entry.134591584" class="email-input" placeholder="your@email.com" required>
+      <button type="submit" class="email-submit">Subscribe</button>
+    </form>
+</div>
 
   <!-- FOOTER -->
   <footer>
